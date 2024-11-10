@@ -1,0 +1,2 @@
+# nodepay-airdrop-bot
+Yep.
