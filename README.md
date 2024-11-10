@@ -30,12 +30,24 @@ Before running the bot, you need to create two text files:
 
 ### 1. `token.txt`
 
-- Go to [Nodepay Registration Page](https://app.nodepay.ai/register?ref=3WZFKKi0Hbvi1sd).
-- Register for an account.
-- Open **DevTools** in your browser (right-click > Inspect or press `Ctrl+Shift+I`).
-- Go to the **Network** tab and filter by **Fetch/XHR**.
-- Find the request to the Nodepay API and look for the **Authorization** header.
-- Copy the value of the token (without the `Bearer` part, just the part after `Bearer`), and paste it in `token.txt` (one token per line).
+To get your Bearer token:
+
+1. **Register for a Nodepay account**:
+   - Go to [Nodepay Registration Page](https://app.nodepay.ai/register?ref=3WZFKKi0Hbvi1sd) and sign up for an account.
+
+2. **Get your token**:
+   - Open **DevTools** in your browser (right-click > Inspect or press `Ctrl+Shift+I`).
+   - Go to the **Console** tab in DevTools.
+   - Type the following command to get your token:
+
+     ```javascript
+     localStorage.getItem('np_webapp_token')
+     ```
+
+   - This will return the Bearer token. **Copy the token** (without the `Bearer` prefix, just the alphanumeric string).
+
+3. **Paste the token in `token.txt`**:
+   - Create a `token.txt` file in the root of your project and paste your token in the file (one token per line).
 
 Example `token.txt`:
 
