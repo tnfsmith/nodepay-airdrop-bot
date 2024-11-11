@@ -1,6 +1,6 @@
 # nodepay-airdrop-bot
 
-A bot for automating Nodepay airdrop interactions, including session management and pinging with proxy support.
+A bot for automating Nodepay airdrop interactions, including session management and pinging with flexible connection options (proxy or direct).
 
 ## Requirements
 
@@ -26,9 +26,9 @@ To get started with the Nodepay Airdrop Bot:
 
 ## Configuration
 
-Before running the bot, you need to create two text files:
+Before running the bot, you need to set up your configuration:
 
-### 1. `token.txt`
+### 1. `token.txt` (Required)
 
 To get your Bearer token:
 
@@ -57,7 +57,9 @@ ey...
 ey...
 ```
 
-### 2. `proxy.txt`
+### 2. `proxy.txt` (Optional)
+
+Only required if you choose to use proxies when running the bot.
 
 - Add your proxy details in `proxy.txt`. Each line should have the format:
 
@@ -81,15 +83,33 @@ To start the bot, run the following command:
 npm start
 ```
 
-The bot will begin the process of connecting to the session, sending pings, and logging relevant information.
+When you start the bot, you'll be prompted to:
+
+1. Choose whether to use proxies or direct connection
+2. Select between single or multiple account mode
+
+### Connection Modes
+
+1. **Proxy Mode**
+   - Requires valid `proxy.txt` file
+   - Uses different IP addresses for connections
+   - Better for running multiple accounts
+   - More anonymous operation
+
+2. **Direct Mode**
+   - No proxy configuration needed
+   - Uses your device's IP address
+   - Simpler setup
+   - Good for single account usage
 
 ## Logs
 
-The bot will log the status and activity, including:
+The bot will log all activity, including:
 
-- Connection status for each session (UID).
-- Ping status for each session.
-- IP address used for each proxy.
+- Connection status for each session (UID)
+- Ping status for each session
+- Connection type (proxy/direct) used
+- IP address information (when using proxies)
 
 Logs are stored in `bot.log` and can also be seen in the console.
 
