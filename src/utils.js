@@ -38,4 +38,19 @@ async function askAccountType() {
   return answers.accountType;
 }
 
-module.exports = { readLines, displayHeader, askAccountType };
+async function askProxyMode() {
+  const answers = await inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'useProxy',
+      message: 'Would you like to use proxies?',
+      default: true,
+    },
+  ]);
+
+  console.log('');
+
+  return answers.useProxy;
+}
+
+module.exports = { readLines, displayHeader, askAccountType, askProxyMode };
